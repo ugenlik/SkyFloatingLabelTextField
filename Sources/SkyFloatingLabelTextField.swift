@@ -369,7 +369,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
 
     fileprivate func updateLineColor() {
         if hasErrorMessage {
-            lineView.backgroundColor = errorColor
+            lineView.backgroundColor = editingOrSelected ? selectedLineColor : lineColor
         } else {
             lineView.backgroundColor = editingOrSelected ? selectedLineColor : lineColor
         }
@@ -389,7 +389,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
 
     fileprivate func updateTextColor() {
         if hasErrorMessage {
-            super.textColor = errorColor
+            super.textColor = cachedTextColor
         } else {
             super.textColor = cachedTextColor
         }
